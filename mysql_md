@@ -1,0 +1,41 @@
+apt-get install mysql-shell
+apt install default-mysql-server  
+service mysql restart 
+
+USE all_bin ;
+
+
+
+
+
+
+
+
+
+SHOW COLUMNS FROM all_bin.ta_bin;
+
+
+DROP DATABASE all_bin;
+CREATE DATABASE all_bin;
+GRANT ALL PRIVILEGES ON *.* TO 'cicada3301'@'%' IDENTIFIED BY 'binpass';
+FLUSH PRIVILEGES;
+
+
+
+
+CREATE TABLE `ta_bin` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `BIN` varchar(255) DEFAULT NULL,
+  `scheme_c` varchar(255) DEFAULT NULL,
+  `Type` varchar(255) DEFAULT NULL,
+  `Brand` varchar(255) DEFAULT NULL,
+  `prepaid_c` varchar(255) DEFAULT NULL,
+  `Bank` varchar(255) DEFAULT NULL,
+  `Country` varchar(255) DEFAULT NULL,
+  `Country_Code` varchar(255) DEFAULT NULL,
+  `Currency` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+);
+
+
+SELECT *  FROM all_bin.ta_bin ;
